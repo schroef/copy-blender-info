@@ -1,3 +1,10 @@
+#######################################################
+
+## Copy Blender Info	######
+##
+## v0.0.1
+## Added
+## 23-02-19 - Initial start addon & repo
 
 bl_info = {
 	"name": "Copy Blender Info",

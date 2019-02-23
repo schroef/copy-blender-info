@@ -6,6 +6,11 @@
 ## Added
 ## 23-02-19 - Initial start addon & repo
 
+## v0.0.2
+## Added
+## 23-02-19 - Feedback when data is copied (info sysbar)
+
+
 bl_info = {
 	"name": "Copy Blender Info",
 	"description": "Copies Blender info such asversion, hash, date & time commit. This is handy for when filing a bug",
@@ -41,6 +46,7 @@ class CAI_OT_CopyInfo(Operator):
 
 		appInfo = version+", "+buildHash.decode()+", "+comDate.decode()+" "+comTime.decode()
 		pyperclip.copy(appInfo)  # now the clipboard content will be string "abc"
+		self.report({'INFO'}, 'Info copied, ready to paste :)')
 		return {'FINISHED'}
 
 

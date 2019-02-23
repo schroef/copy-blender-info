@@ -10,13 +10,16 @@
 ## Added
 ## 23-02-19 - Feedback when data is copied (info sysbar)
 
+## v0.0.3
+## Changed
+## 23-02-19 - Now using BL internal copy method, easier and less files (Thanks Oleg Stepanov)
 
 bl_info = {
 	"name": "Copy Blender Info",
 	"description": "Copies Blender info such asversion, hash, date & time commit. This is handy for when filing a bug",
 	"location": "Help Menu > Copy Blender Info",
 	"author": "Rombout Versluijs",
-	"version": (0, 0, 1),
+	"version": (0, 0, 3),
 	"blender": (2, 80, 0),
 	"wiki_url": "https://github.com/schroef/copy-blender-info",
 	"tracker_url": "https://github.com/schroef/copy-blender-info/issues",
@@ -24,7 +27,6 @@ bl_info = {
 }
 
 import bpy
-from .pyperclip import *
 
 from bpy.types import (
 	Operator
@@ -45,7 +47,7 @@ class CAI_OT_CopyInfo(Operator):
 		buildType = bpy.app.build_type
 
 		appInfo = version+", "+buildHash.decode()+", "+comDate.decode()+" "+comTime.decode()
-		pyperclip.copy(appInfo)  # now the clipboard content will be string "abc"
+		bpy.context.window_manager.clipboard=appInfo
 		self.report({'INFO'}, 'Info copied, ready to paste :)')
 		return {'FINISHED'}
 

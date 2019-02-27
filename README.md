@@ -15,7 +15,7 @@ My take on simplifying this is to simply copy data to the clipboard so the user 
 | **OS** | **Blender** |
 | ------------- | ------------- |
 | OSX | Blender 2.80+ |
-| Windows | Not Tested |
+| Windows | Blender 2.80+ |
 | Linux | Not Tested |
 
 <!--

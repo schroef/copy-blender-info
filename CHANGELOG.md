@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.0.4] 2019-02-26
 ### Added
-- After copying bl info call url bugpost direct from this addon (now its just 1 click)
+- After copying bl info call url bugpost direct from this addon (Thanks Vyacheslav 4 the idea)
 
 ## [0.0.3] - 2019-02-23
 ### Changed

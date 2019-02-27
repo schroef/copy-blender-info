@@ -14,12 +14,16 @@
 ## Changed
 ## 23-02-19 - Now using BL internal copy method, easier and less files (Thanks Oleg Stepanov)
 
+## v0.0.4
+## Added
+## 26-02-19 - After copying bl info call url bugpost direct from this addon (now its just 1 click)
+
 bl_info = {
 	"name": "Copy Blender Info",
-	"description": "Copies Blender info such asversion, hash, date & time commit. This is handy for when filing a bug",
-	"location": "Help Menu > Copy Blender Info",
+	"description": "Reports a bug but also copies Blender info such as version, hash, date & time commit. This is handy for when filing a bug",
+	"location": "Help Menu > Report a Bug (+info)",
 	"author": "Rombout Versluijs",
-	"version": (0, 0, 3),
+	"version": (0, 0, 4),
 	"blender": (2, 80, 0),
 	"wiki_url": "https://github.com/schroef/copy-blender-info",
 	"tracker_url": "https://github.com/schroef/copy-blender-info/issues",
@@ -36,7 +40,7 @@ from bpy.types import (
 class CAI_OT_CopyInfo(Operator):
 	"""Copies Blender info to clipboard which is need to file a bug report"""
 	bl_idname="cai.copy_info"
-	bl_label="Copy Blender Info"
+	bl_label="Report a Bug (+info)"
 
 	def execute(self,context):
 		version = bpy.app.version_string
@@ -48,12 +52,13 @@ class CAI_OT_CopyInfo(Operator):
 
 		appInfo = version+", "+buildHash.decode()+", "+comDate.decode()+" "+comTime.decode()
 		bpy.context.window_manager.clipboard=appInfo
+		bpy.ops.wm.url_open(url="https://developer.blender.org/maniphest/task/edit/form/1")
 		self.report({'INFO'}, 'Info copied, ready to paste :)')
 		return {'FINISHED'}
 
 
 def CAI_AddCopyOP(self, context):
-	self.layout.operator("cai.copy_info",text="Copy Blender Info", icon='COPYDOWN')
+	self.layout.operator("cai.copy_info",text="Report a Bug (+info)", icon='URL')#icon='COPYDOWN')
 
 classes = (
 	CAI_OT_CopyInfo
@@ -64,7 +69,6 @@ def register():
 	#for cls in classes:
 	#	bpy.utils.register_class(cls)
 	bpy.utils.register_class(CAI_OT_CopyInfo)
-
 	bpy.types.TOPBAR_MT_help.prepend(CAI_AddCopyOP)
 
 def unregister():

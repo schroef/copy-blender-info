@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## v0.0.5 - 2022-04-19
+### Added
+- Single quotes for hash code 
+
 ## [0.0.4] 2019-02-26
 ### Added
 - After copying bl info call url bugpost direct from this addon (Thanks Vyacheslav 4 the idea)
@@ -26,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 <!--### Official Rigify Info-->
 
+[0.0.5]:https://github.com/schroef/Copy-Blender-Info/releases/tag/v.0.0.5
 [0.0.4]:https://github.com/schroef/Copy-Blender-Info/releases/tag/v.0.0.4
 [0.0.3]:https://github.com/schroef/Copy-Blender-Info/releases/tag/v.0.0.3
 [0.0.2]:https://github.com/schroef/Copy-Blender-Info/releases/tag/v.0.0.2

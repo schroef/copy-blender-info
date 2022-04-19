@@ -18,12 +18,18 @@
 ## Added
 ## 26-02-19 - After copying bl info call url bugpost direct from this addon (now its just 1 click)
 
+## v0.0.5
+## Added
+## 19-04-22
+# - Single quotes for hash code 
+
+
 bl_info = {
 	"name": "Copy Blender Info",
 	"description": "Reports a bug but also copies Blender info such as version, hash, date & time commit. This is handy for when filing a bug",
 	"location": "Help Menu > Report a Bug (+info)",
 	"author": "Rombout Versluijs",
-	"version": (0, 0, 4),
+	"version": (0, 0, 5),
 	"blender": (2, 80, 0),
 	"wiki_url": "https://github.com/schroef/copy-blender-info",
 	"tracker_url": "https://github.com/schroef/copy-blender-info/issues",
@@ -50,7 +56,7 @@ class CAI_OT_CopyInfo(Operator):
 		buildHash = bpy.app.build_hash
 		buildType = bpy.app.build_type
 
-		appInfo = version+", "+buildHash.decode()+", "+comDate.decode()+" "+comTime.decode()
+		appInfo = version+", `"+buildHash.decode()+"`, "+comDate.decode()+" "+comTime.decode()
 		bpy.context.window_manager.clipboard=appInfo
 		bpy.ops.wm.url_open(url="https://developer.blender.org/maniphest/task/edit/form/1")
 		self.report({'INFO'}, 'Info copied, ready to paste :)')

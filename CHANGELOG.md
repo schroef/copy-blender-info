@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## v0.0.5 - 2022-04-19
+## [0.0.5] - 2022-04-19
 ### Added
 - Single quotes for hash code 
 

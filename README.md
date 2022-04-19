@@ -4,7 +4,7 @@ Finding Blender's application info for filling a bug report can be "tedious". A 
 
 My take on simplifying this is to simply copy data to the clipboard so the user only needs to paste the data. Done!
 
-!['Copy Blender Info'](https://raw.githubusercontent.com/wiki/schroef/copy-blender-info/images/copy-blender-info_bl280_v005.jpg?v19042022)
+!['Copy Blender Info'](https://raw.githubusercontent.com/wiki/schroef/copy-blender-info/images/copy-blender-info_bl280_v005.png?v20042022)
 
 ## Features
 
